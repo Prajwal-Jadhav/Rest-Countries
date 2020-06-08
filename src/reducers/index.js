@@ -7,11 +7,6 @@ const countriesListReducer = (state = [], action) => {
       return action.payload.slice(0, 8);
     case "SEARCH_AND_FETCH_COUNTRIES":
       return action.payload;
-    // case "FILTER_COUNTRIES":
-    //   if (action.payload === "") return [...state];
-    //   else {
-    //     return state.filter(country => country.region === action.payload);
-    //   }
     default:
       return state;
   }
@@ -35,9 +30,19 @@ const filterCountriesReducer = (state = [], action) => {
   }
 };
 
+const singleCountryDetailsReducer = (oldCountry = {}, action) => {
+  switch (action.type) {
+    case "SINGLE_COUNTRY_DETAILS":
+      return action.payload;
+    default:
+      return oldCountry;
+  }
+};
+
 export default combineReducers({
   countriesList: countriesListReducer,
   filteredCountries: filterCountriesReducer,
   selectValue: selectValueReducer,
+  singleCountryDetails: singleCountryDetailsReducer,
   form: formReducer,
 });

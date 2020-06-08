@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { Field, reduxForm } from "redux-form";
-import { searchAndFetchCountries, filterCountries } from "../../actions/index";
+import {
+  searchAndFetchCountries,
+  filterCountries,
+  selectValueChange,
+} from "../../actions/index";
 import { connect } from "react-redux";
 
 class SearchBar extends Component {
@@ -12,6 +16,7 @@ class SearchBar extends Component {
 
   onFormSubmit = async formValue => {
     await this.props.searchAndFetchCountries(formValue.countryName);
+    this.props.selectValueChange("");
     this.props.filterCountries("");
   };
 
@@ -28,4 +33,10 @@ class SearchBar extends Component {
 
 export default reduxForm({
   form: "SearchBar",
-})(connect(null, { searchAndFetchCountries, filterCountries })(SearchBar));
+})(
+  connect(null, {
+    searchAndFetchCountries,
+    filterCountries,
+    selectValueChange,
+  })(SearchBar)
+);

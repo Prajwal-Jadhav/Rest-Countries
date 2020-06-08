@@ -11,7 +11,11 @@ class Dropdown extends Component {
   render() {
     return (
       <div>
-        <select value={this.props.selectValue} onChange={this.onSelectChange}>
+        <select
+          value={this.props.selectValue}
+          onChange={this.onSelectChange}
+          className="app__bar--select"
+        >
           <option value="">Filter by Region</option>
           <option value="Africa">Africa</option>
           <option value="Americas">America</option>

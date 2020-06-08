@@ -38,9 +38,11 @@ export const filterCountries = region => {
       dispatch({ type: "FILTER_COUNTRIES", payload: filteredCountries });
     }
   };
+};
 
-  // return {
-  //   type: "FILTER_COUNTRIES",
-  //   payload: region,
-  // };
+export const fetchCountryDetails = countryObj => {
+  return {
+    type: "SINGLE_COUNTRY_DETAILS",
+    payload: countryObj,
+  };
 };
