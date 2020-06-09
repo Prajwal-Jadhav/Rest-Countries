@@ -15,7 +15,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className={this.props.darkMode ? "dark" : "App"}>
         <Header />
         <BrowserRouter>
           <Route path="/" exact component={FrontPage} />
@@ -26,4 +26,12 @@ class App extends Component {
   }
 }
 
-export default connect(null, { fetchAllCountries, filterCountries })(App);
+const mapStateToProps = state => {
+  return {
+    darkMode: state.darkMode,
+  };
+};
+
+export default connect(mapStateToProps, { fetchAllCountries, filterCountries })(
+  App
+);

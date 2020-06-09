@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { toggleDarkMode } from "./actions/index";
 
-export default class Header extends Component {
+class Header extends Component {
   render() {
     return (
       <div className="header">
@@ -8,7 +10,7 @@ export default class Header extends Component {
           Where in the world? <br />{" "}
           <small className="attribution">by Prajwal Jadhav</small>{" "}
         </div>
-        <div className="header__darkmode">
+        <div className="header__darkmode" onClick={this.props.toggleDarkMode}>
           <i className="far fa-moon"></i>
           {"  "} Dark Mode
         </div>
@@ -16,3 +18,5 @@ export default class Header extends Component {
     );
   }
 }
+
+export default connect(null, { toggleDarkMode })(Header);

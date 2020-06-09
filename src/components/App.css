@@ -6,11 +6,21 @@
   box-sizing: border-box;
 }
 
+:root {
+  --darkBackground: hsl(207, 26%, 17%);
+  --darkCard: hsl(209, 23%, 22%);
+}
+
 body {
-  height: 100vh;
-  background-color: hsl(0, 0%, 98%);
   font-family: "Nunito Sans", sans-serif;
+}
+
+.App {
+  background-color: hsl(0, 0%, 98%);
   color: hsl(200, 15%, 8%);
+  padding-bottom: 1px;
+  min-height: 100vh;
+  height: 100%;
 }
 
 a {
@@ -38,6 +48,7 @@ a {
 .header__darkmode {
   font-size: 17px;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .attribution {
@@ -59,11 +70,25 @@ a {
   align-items: center;
 }
 
+.SearchBar {
+  position: relative;
+}
+
+.fa-search {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 18px;
+}
+
 .app__bar--input {
   width: 480px;
-  font-size: 14px;
+  font-size: 15px;
   font-family: "Nunito Sans", sans-serif;
-  padding: 8px 10px;
+  border: none;
+  border-radius: 4px;
+  padding: 15px 15px;
+  padding-left: 50px;
   color: hsl(200, 15%, 8%);
   -webkit-box-shadow: 0px 2px 15px 4px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0px 2px 15px 4px rgba(0, 0, 0, 0.2);
@@ -75,7 +100,7 @@ a {
   width: 200px;
   font-size: 17px;
   font-family: "Nunito Sans", sans-serif;
-  padding: 12px 15px;
+  padding: 13px 15px;
   border-radius: 4px;
   border: 1px solid #ddd;
   box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.1);
@@ -124,6 +149,8 @@ a {
   display: flex;
   flex-direction: column;
   padding-top: 30px;
+  padding-bottom: 0px;
+  height: 90vh;
 }
 
 .CountryDetail__grid {
@@ -183,4 +210,42 @@ a {
   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
   margin: 30px 0px;
   border-radius: 3px;
+}
+
+.dark,
+.dark .CountryDetail {
+  background-color: var(--darkBackground);
+  padding-bottom: 1px;
+  transition: background-color 0.3s linear;
+  color: white;
+  height: 90vh;
+}
+
+.dark {
+  padding-bottom: 1px;
+  height: 100%;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.dark .header,
+.dark .app__bar--input,
+.dark .app__bar--select,
+.dark .CountryCard,
+.dark .backbutton,
+.dark .border__country {
+  background-color: var(--darkCard);
+  color: white;
+  transition: background-color 0.3s linear;
+}
+
+.dark a,
+.dark .app__bar--input,
+.dark .app__bar--select {
+  transition: color 0.2 linear;
+  color: white;
+}
+
+.dark .app__bar--select {
+  border: none;
 }

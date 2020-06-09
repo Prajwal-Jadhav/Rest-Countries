@@ -46,3 +46,9 @@ export const fetchCountryDetails = countryObj => {
     payload: countryObj,
   };
 };
+
+export const toggleDarkMode = () => {
+  return {
+    type: "TOGGLE_DARK_MODE",
+  };
+};
