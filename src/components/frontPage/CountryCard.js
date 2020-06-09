@@ -8,7 +8,11 @@ function CountryCard({ country, fetchCountryDetails }) {
     <Link to="/countrydetail" onClick={() => fetchCountryDetails(country)}>
       <div className="CountryCard">
         <div className="flag__image__container">
-          <img src={country.flag} alt="i" className="card__flag" />
+          <img
+            src={country.flag}
+            alt={`${country.alpha3Code} flag`}
+            className="card__flag"
+          />
         </div>
         <div className="Card__content">
           <div className="Card__heading">{country.name}</div>

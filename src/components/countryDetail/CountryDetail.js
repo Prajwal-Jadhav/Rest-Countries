@@ -3,10 +3,6 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 class CountryDetail extends Component {
-  // renderPopulation = (population = 0) => {
-  //   return population.toLocaleString();
-  // };
-
   renderCountryDetail = () => {
     if (
       this.props.country === {} ||
@@ -19,7 +15,9 @@ class CountryDetail extends Component {
       <div className="CountryDetail">
         <div className="backbutton__container">
           <Link to="/">
-            <div className="backbutton">Back</div>
+            <div className="backbutton">
+              <i className="fas fa-long-arrow-alt-left"></i> {"  "} Back
+            </div>
           </Link>
         </div>
         <div className="CountryDetail__grid">

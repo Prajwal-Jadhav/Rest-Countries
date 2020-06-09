@@ -8,7 +8,10 @@ export default class Header extends Component {
           Where in the world? <br />{" "}
           <small className="attribution">by Prajwal Jadhav</small>{" "}
         </div>
-        <div className="header__darkmode">Dark Mode</div>
+        <div className="header__darkmode">
+          <i className="far fa-moon"></i>
+          {"  "} Dark Mode
+        </div>
       </div>
     );
   }
