@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 class CountryDetail extends Component {
+  // renderPopulation = (population = 0) => {
+  //   return population.toLocaleString();
+  // };
+
   renderCountryDetail = () => {
     if (
       this.props.country === {} ||
@@ -12,6 +17,11 @@ class CountryDetail extends Component {
 
     return (
       <div className="CountryDetail">
+        <div className="backbutton__container">
+          <Link to="/">
+            <div className="backbutton">Back</div>
+          </Link>
+        </div>
         <div className="CountryDetail__grid">
           <img
             className="CountryDetail__image"
@@ -28,7 +38,7 @@ class CountryDetail extends Component {
               </p>
               <p className="CountryDetail__info--item">
                 <strong>Population: </strong>
-                {this.props.country.population}
+                {this.props.country.population.toLocaleString()}
               </p>
               <p className="CountryDetail__info--item">
                 <strong>Region: </strong>

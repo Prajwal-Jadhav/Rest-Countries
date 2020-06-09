@@ -7,6 +7,7 @@
 }
 
 body {
+  height: 100vh;
   background-color: hsl(0, 0%, 98%);
   font-family: "Nunito Sans", sans-serif;
   color: hsl(200, 15%, 8%);
@@ -15,6 +16,33 @@ body {
 a {
   text-decoration: none;
   color: hsl(200, 15%, 8%);
+}
+
+.header {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 85px 2px 70px;
+  background-color: #fff;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.header__title {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.header__darkmode {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.attribution {
+  font-size: 13px;
+  font-weight: 300;
 }
 
 .CountryList {
@@ -86,9 +114,12 @@ a {
 
 .CountryDetail {
   min-width: 100vw;
-  height: 90vh;
+  height: 100%;
   background-color: #fff;
   padding: 20px 80px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
 }
 
 .CountryDetail__grid {
@@ -135,5 +166,16 @@ a {
   padding: 4px 20px;
   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
   margin: 0px 5px;
+  border-radius: 3px;
+}
+
+.backbutton__container {
+  align-self: flex-start;
+}
+
+.backbutton {
+  padding: 5px 20px;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+  margin: 30px 0px;
   border-radius: 3px;
 }

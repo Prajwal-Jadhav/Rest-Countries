@@ -13,7 +13,7 @@ function CountryCard({ country, fetchCountryDetails }) {
         <div className="Card__content">
           <div className="Card__heading">{country.name}</div>
           <div>
-            <strong>Population:</strong> {country.population}
+            <strong>Population:</strong> {country.population.toLocaleString()}
           </div>
           <div>
             <strong>Region:</strong> {country.region}

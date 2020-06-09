@@ -5,6 +5,7 @@ import FrontPage from "./frontPage/FrontPage";
 import { connect } from "react-redux";
 import { fetchAllCountries, filterCountries } from "../actions/index";
 import "./App.css";
+import Header from "../Header";
 
 class App extends Component {
   async componentDidMount() {
@@ -15,6 +16,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <Header />
         <BrowserRouter>
           <Route path="/" exact component={FrontPage} />
           <Route path="/countrydetail" exact component={CountryDetail} />
