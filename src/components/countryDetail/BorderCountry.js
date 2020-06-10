@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 class BorderCountry extends Component {
   renderBorderCountry = () => {
@@ -16,7 +17,9 @@ class BorderCountry extends Component {
 
   render() {
     return (
-      <span className="border__country">{this.renderBorderCountry()}</span>
+      <Link to={`/countrydetail/${this.props.borderCountry}`}>
+        <span className="border__country">{this.renderBorderCountry()}</span>
+      </Link>
     );
   }
 }
