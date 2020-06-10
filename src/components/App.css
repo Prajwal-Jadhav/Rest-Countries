@@ -246,7 +246,7 @@ a {
 .dark a,
 .dark .app__bar--input,
 .dark .app__bar--select {
-  transition: color 0.2 linear;
+  transition: color 0.2s linear;
   color: white;
 }
 

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { HashRouter, Route } from "react-router-dom";
 import CountryDetail from "./countryDetail/CountryDetail";
 import FrontPage from "./frontPage/FrontPage";
 import { connect } from "react-redux";
@@ -17,14 +17,14 @@ class App extends Component {
     return (
       <div className={this.props.darkMode ? "dark" : "App"}>
         <Header />
-        <BrowserRouter>
+        <HashRouter>
           <Route path="/" exact component={FrontPage} />
           <Route
             path="/countrydetail/:alpha3Code"
             exact
             component={CountryDetail}
           />
-        </BrowserRouter>
+        </HashRouter>
       </div>
     );
   }
