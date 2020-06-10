@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 function CountryCard({ country, fetchCountryDetails }) {
   return (
     <Link
-      to={`/countrydetail/${country.name}`}
+      to={`/countrydetail/${country.alpha3Code}`}
       onClick={() => fetchCountryDetails(country)}
     >
       <div className="CountryCard">

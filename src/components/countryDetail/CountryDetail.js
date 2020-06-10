@@ -97,7 +97,7 @@ const mapStateToProps = (state, ownProps) => {
   console.log(ownProps);
   return {
     country: state.allCountriesList.find(
-      country => country.name === ownProps.match.params.country
+      country => country.alpha3Code === ownProps.match.params.alpha3Code
     ),
   };
 };

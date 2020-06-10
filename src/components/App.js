@@ -20,7 +20,7 @@ class App extends Component {
         <BrowserRouter>
           <Route path="/" exact component={FrontPage} />
           <Route
-            path="/countrydetail/:country"
+            path="/countrydetail/:alpha3Code"
             exact
             component={CountryDetail}
           />
