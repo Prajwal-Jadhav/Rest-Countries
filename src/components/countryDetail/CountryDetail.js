@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { fetchAllCountries } from "../../actions/index";
+import BorderCountry from "./BorderCountry";
 
 class CountryDetail extends Component {
   componentDidMount() {
@@ -77,9 +78,7 @@ class CountryDetail extends Component {
               <strong>Border Countries: </strong>
               {"  "}
               {this.props.country.borders.map((border, index) => (
-                <span className="border__country" key={index}>
-                  {border}
-                </span>
+                <BorderCountry borderCountry={border} key={index} />
               ))}
             </div>
           </div>
