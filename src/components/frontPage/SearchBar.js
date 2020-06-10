@@ -6,9 +6,6 @@ import {
   selectValueChange,
 } from "../../actions/index";
 import { connect } from "react-redux";
-// import TextField from "@material-ui/core/TextField";
-// import InputAdornment from "@material-ui/core/InputAdornment";
-// import SearchIcon from "@material-ui/icons/Search";
 
 class SearchBar extends Component {
   state = { inputValue: "" };

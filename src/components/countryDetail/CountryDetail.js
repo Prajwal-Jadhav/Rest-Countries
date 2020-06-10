@@ -93,7 +93,6 @@ class CountryDetail extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(ownProps);
   return {
     country: state.allCountriesList.find(
       country => country.alpha3Code === ownProps.match.params.alpha3Code
