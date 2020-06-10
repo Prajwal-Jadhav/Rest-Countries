@@ -5,7 +5,10 @@ import { connect } from "react-redux";
 
 function CountryCard({ country, fetchCountryDetails }) {
   return (
-    <Link to="/countrydetail" onClick={() => fetchCountryDetails(country)}>
+    <Link
+      to={`/countrydetail/${country.name}`}
+      onClick={() => fetchCountryDetails(country)}
+    >
       <div className="CountryCard">
         <div className="flag__image__container">
           <img

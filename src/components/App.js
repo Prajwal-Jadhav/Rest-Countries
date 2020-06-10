@@ -19,7 +19,11 @@ class App extends Component {
         <Header />
         <BrowserRouter>
           <Route path="/" exact component={FrontPage} />
-          <Route path="/countrydetail" exact component={CountryDetail} />
+          <Route
+            path="/countrydetail/:country"
+            exact
+            component={CountryDetail}
+          />
         </BrowserRouter>
       </div>
     );

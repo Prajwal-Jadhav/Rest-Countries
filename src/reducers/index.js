@@ -12,6 +12,15 @@ const countriesListReducer = (state = [], action) => {
   }
 };
 
+const allCountriesListReducer = (state = [], action) => {
+  switch (action.type) {
+    case "FETCH_ALL_COUNTRIES":
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
 const selectValueReducer = (oldValue = "", action) => {
   switch (action.type) {
     case "SELECT_VALUE_CHANGE":
@@ -50,6 +59,7 @@ const darkModeReducer = (state = false, action) => {
 
 export default combineReducers({
   countriesList: countriesListReducer,
+  allCountriesList: allCountriesListReducer,
   filteredCountries: filterCountriesReducer,
   selectValue: selectValueReducer,
   singleCountryDetails: singleCountryDetailsReducer,

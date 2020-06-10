@@ -1,11 +1,16 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { fetchAllCountries } from "../../actions/index";
 
 class CountryDetail extends Component {
+  componentDidMount() {
+    this.props.fetchAllCountries();
+  }
+
   renderCountryDetail = () => {
     if (
-      this.props.country === {} ||
+      this.props.country === undefined ||
       this.props.country.topLevelDomain === undefined
     ) {
       return null;
@@ -88,10 +93,13 @@ class CountryDetail extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
+  console.log(ownProps);
   return {
-    country: state.singleCountryDetails,
+    country: state.allCountriesList.find(
+      country => country.name === ownProps.match.params.country
+    ),
   };
 };
 
-export default connect(mapStateToProps)(CountryDetail);
+export default connect(mapStateToProps, { fetchAllCountries })(CountryDetail);
