@@ -4,7 +4,10 @@ import CountryCard from "./CountryCard";
 
 class CountryList extends Component {
   render() {
-    if (!this.props.countries) return null;
+    if (!this.props.countries || !this.props.countries[0])
+      return (
+        <div className="CountryList__error">We could not find that country</div>
+      );
     return (
       <div className="CountryList">
         {this.props.countries.map(country => (

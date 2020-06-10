@@ -63,6 +63,14 @@ a {
   margin: 50px 70px;
 }
 
+.CountryList__error {
+  text-align: center;
+  margin-top: 80px;
+  font-size: 22px;
+  font-weight: 600;
+  color: grey;
+}
+
 .app__bar {
   margin: 45px 70px 0px;
   display: flex;
